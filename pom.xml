@@ -67,15 +67,10 @@
       <artifactId>mybatis</artifactId>
       <version>${org.mybaitis.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.mybatis.generator</groupId>
-      <artifactId>mybatis-generator-maven-plugin</artifactId>
-      <version>1.3.2</version>
-    </dependency>
 
     <dependency>
       <groupId>org.aspectj</groupId>
-      <artifactId>asoectjweaver</artifactId>
+      <artifactId>aspectjweaver</artifactId>
       <version>1.7.3</version>
     </dependency>
 
@@ -219,6 +214,11 @@
       <version>1.3</version>
     </dependency>
 
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.9.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -265,8 +265,21 @@
         <plugin>
           <groupId>org.mybatis.generator</groupId>
           <artifactId>mybatis-generator-maven-plugin</artifactId>
-          <version>1.3.2</version>
+          <version>1.3.5</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.mybatis.generator</groupId>
+              <artifactId>mybatis-generator-core</artifactId>
+              <version>1.3.5</version>
+            </dependency>
+            <dependency>
+              <groupId>mysql</groupId>
+              <artifactId>mysql-connector-java</artifactId>
+              <version>8.0.15</version>
+            </dependency>
+          </dependencies>
           <configuration>
+            <!--<configurationFile>generatorConfig.xml</configurationFile>-->
             <verbose>true</verbose>
             <overwrite>true</overwrite>
           </configuration>
