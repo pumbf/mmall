@@ -3,7 +3,9 @@
 
 # Log file
 *.log
-
+# Config file
+mmall.properties
+datasource.properties
 # BlueJ files
 *.ctxt
 
